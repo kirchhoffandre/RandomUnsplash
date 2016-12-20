@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>Random Unsplash</title>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="cover.css">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <script src="unsplash-source-js-master/dist/unsplash-source.js"></script>
+
+    <script>
+        function myFunction() {
+            location.reload(true);
+        }
+    </script>
+
+    <script>
+        function myFunction2() {
+
+            var photo = new UnsplashPhoto();
+            var testArr = [];
+            testArr = photo.fetch();
+            console.log("url:" + testArr);
+            
+            document.getElementById("myImg").src = testArr.toString();
+        }
+
+    </script>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <h1>Random Bus Pic</h1>
+        <h4>Generating a random unsplash picture</h4>
+        <div class="button">
+            <button onclick="myFunction()" id="newPicButton" type="button" name="button" class="btn-primary">Generate Unsplash!</button>
+        </div>
+
+        <div class="imagecontainer">
+            <div class="row">
+                <div class="col-md-12">
+
+                    <div class="myUnsplash">
+                        <img class="img-responsive img-thumbnail" src="https://source.unsplash.com/collection/413" alt="Random Unsplash Picture">
+                    </div>
+                    <div class="button">
+                        <button onclick="myFunction2()" id="newPicButton2" type="button" name="button" class="btn-primary">Generate Unsplash!</button>
+                        <button onclick="myFunction3()" id="newPicButton3" type="button" name="button" class="btn-primary">Reload Picture</button>
+
+                    </div>
+                    <div class="myUnsplash">
+                        <img class="img-responsive img-thumbnail" id="myImg" src="#" alt="Random Unsplash Picture">
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+
+</html>

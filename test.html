@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+
+function byId(e){return document.getElementById(e);}
+
+window.addEventListener('load', mInit, false);
+
+function mInit()
+{
+    var tgt = byId('ImageButton1');
+    tgt.secondSource = 'images/image2.png';
+}
+
+function byId(e){return document.getElementById(e);}
+
+function action()
+{
+    var tgt = byId('ImageButton1');
+    var tmp = tgt.src;
+    tgt.src = tgt.secondSource;
+    tgt.secondSource = tmp;
+};
+
+function action2()
+{
+    var tgt = byId('imgBtn1');
+    var tmp = tgt.src;
+    tgt.src = tgt.getAttribute('src2');
+    tgt.setAttribute('src2', tmp);
+}
+</script>
+<style>
+</style>
+</head>
+<body>
+    <button onClick="action();">click me<img src="image1.jpeg" width="16px" id="ImageButton1"></button>
+    <br>
+    <button onClick="action2();">click me<img id='imgBtn1' src="image1.png" src2='images/image2.png' width="16px"></button>
+    </body>
+</html>
